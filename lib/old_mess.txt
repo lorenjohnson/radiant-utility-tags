@@ -1,0 +1,57 @@
+
+
+
+# Override any Radius tag attributes set with get request parameters if tag.attr.parameters is true, if any
+# previous_end_date = previous_params["end_date"]
+# previous_begin_date = previous_params["begin_date"]
+# previous_days = previous_params["days"]
+# if !tag.attr['parameters'].nil?
+#   if !@request.parameters[:days].nil?
+#     tag.locals.days = @request.parameters[:days].to_i
+#   end
+#   if !@request.parameters[:begin_date].nil? 
+#     tag.locals.begin_date = Date.parse(@request.parameters[:begin_date])
+#   end
+#   if !@request.parameters[:end_date].nil?
+#     tag.locals.end_date = Date.parse(@request.parameters[:end_date])
+#   end 
+#   if !@request.parameters[:calendars].nil?
+#     # if !@request.referer.split("?")[1].nil?
+#     #   previous_params = CGIMethods.parse_query_parameters(@request.referer.split("?")[1])
+#     #   previous_calendars = previous_params["calendars"].to_s
+#     #   tag.locals.calendars = Calendar.find(:all, :conditions => ["name IN (?)", previous_calendars.split(",").collect { |s| s.strip }])
+#     # else
+#     tag.locals.calendars = Calendar.find(:all, :conditions => ["name IN (?)", @request.parameters[:calendars].split(",").collect { |s| s.strip }])
+#     # end
+#   end
+# end
+
+# Retrieve attributes of previous request if not set in this request
+  # url = @request.referer.split("?")[1] unless @request.referer.nil?
+  # url = CGIMethods.parse_query_parameters(url)
+
+
+  # Calendar::refresh_all
+  # Dir.getwd
+
+  # if you're talking about a date time range, consider (first_time..second_item).to_s(:db)
+  # (tag.locals.begin_date..tag.locals.end_date).to_s(:db)
+
+  # , @request.parameters[:begin_date].nil?, @request.parameters[:end_date].nil?
+  # tag.locals.begin_date = tag.attr['begin_date'].nil? ? (@request.parameters[:begin_date].nil? ? Date.today : Date.parse(@request.parameters[:begin_date]) : Date.parse(tag.attr['begin_date'])
+  # 
+  # if  tag.attr['days'].nil? then
+  #    tag.locals.end_date = tag.attr['end_date'].nil? ?  (@request.parameters[:end_date].nil? ? Date.today : Date.parse(@request.parameters[:end_date]) : Date.parse(tag.attr['end_date'])
+  # end
+  # 
+  # tag.locals.end_date = @request.parameters[:end_date].nil? ? Date.today >> 1 : Date.parse(@request.parameters[:end_date])
+  # 
+  # tag.locals.begin_date = @request.parameters[:begin_date].nil? ? Date.today : Date.parse(@request.parameters[:begin_date])
+  # tag.locals.end_date = @request.parameters[:end_date].nil? ? Date.today >> 1 : Date.parse(@request.parameters[:end_date])
+
+  # tag.locals.days = tag.attr['days'].to_i || @request.parameters[:days]
+  # 
+
+  # tag "calendar:list" do |tag|
+  #   tag.locals
+  # end
