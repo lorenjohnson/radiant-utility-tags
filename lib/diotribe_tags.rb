@@ -46,7 +46,7 @@ module DiotribeTags
     tag.expand
     raise TagError.new("`navigation' tag must include a `normal' tag") unless hash.has_key? :normal
     result = []
-    pairs = tag.attr['urls'].to_s.split(';').collect do |pair|
+    pairs = tag.attr['urls'].to_s.split('|').collect do |pair|
       parts = pair.split(':')
       value = parts.pop
       key = parts.join(':')
